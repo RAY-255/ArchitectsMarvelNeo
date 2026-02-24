@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/stairs",
+  "textures": {
+    "bottom": "architectsmarvel_port:block/lapis_tiles",
+    "side": "architectsmarvel_port:block/lapis_tiles",
+    "top": "architectsmarvel_port:block/lapis_tiles"
+  }
+}

@@ -1,0 +1,124 @@
+{
+  "variants": {
+    "facing=east,indicator=0,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_0",
+      "y": 270
+    },
+    "facing=east,indicator=0,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_0",
+      "y": 270
+    },
+    "facing=east,indicator=1,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_1",
+      "y": 270
+    },
+    "facing=east,indicator=1,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_1",
+      "y": 270
+    },
+    "facing=east,indicator=2,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_2",
+      "y": 270
+    },
+    "facing=east,indicator=2,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_2",
+      "y": 270
+    },
+    "facing=east,indicator=3,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_3",
+      "y": 270
+    },
+    "facing=east,indicator=3,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_3",
+      "y": 270
+    },
+    "facing=north,indicator=0,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_0",
+      "y": 180
+    },
+    "facing=north,indicator=0,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_0",
+      "y": 180
+    },
+    "facing=north,indicator=1,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_1",
+      "y": 180
+    },
+    "facing=north,indicator=1,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_1",
+      "y": 180
+    },
+    "facing=north,indicator=2,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_2",
+      "y": 180
+    },
+    "facing=north,indicator=2,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_2",
+      "y": 180
+    },
+    "facing=north,indicator=3,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_3",
+      "y": 180
+    },
+    "facing=north,indicator=3,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_3",
+      "y": 180
+    },
+    "facing=south,indicator=0,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_0"
+    },
+    "facing=south,indicator=0,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_0"
+    },
+    "facing=south,indicator=1,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_1"
+    },
+    "facing=south,indicator=1,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_1"
+    },
+    "facing=south,indicator=2,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_2"
+    },
+    "facing=south,indicator=2,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_2"
+    },
+    "facing=south,indicator=3,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_3"
+    },
+    "facing=south,indicator=3,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_3"
+    },
+    "facing=west,indicator=0,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_0",
+      "y": 90
+    },
+    "facing=west,indicator=0,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_0",
+      "y": 90
+    },
+    "facing=west,indicator=1,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_1",
+      "y": 90
+    },
+    "facing=west,indicator=1,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_1",
+      "y": 90
+    },
+    "facing=west,indicator=2,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_2",
+      "y": 90
+    },
+    "facing=west,indicator=2,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_2",
+      "y": 90
+    },
+    "facing=west,indicator=3,lit=false": {
+      "model": "architectsmarvel_port:block/spotlight_block_off_3",
+      "y": 90
+    },
+    "facing=west,indicator=3,lit=true": {
+      "model": "architectsmarvel_port:block/spotlight_block_on_3",
+      "y": 90
+    }
+  }
+}

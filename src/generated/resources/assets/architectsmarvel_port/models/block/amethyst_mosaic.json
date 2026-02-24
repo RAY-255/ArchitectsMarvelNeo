@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "architectsmarvel_port:block/amethyst_mosaic_top",
+    "side": "architectsmarvel_port:block/amethyst_mosaic_side1"
+  }
+}

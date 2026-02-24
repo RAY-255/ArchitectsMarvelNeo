@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "architectsmarvel_port:block/lapis_tile_slab"
+    },
+    "type=double": {
+      "model": "architectsmarvel_port:block/lapis_tiles"
+    },
+    "type=top": {
+      "model": "architectsmarvel_port:block/lapis_tile_slab_top"
+    }
+  }
+}

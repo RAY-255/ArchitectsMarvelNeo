@@ -1,0 +1,7 @@
+{
+  "variants": {
+    "": {
+      "model": "architectsmarvel_port:block/calcite_bricks"
+    }
+  }
+}

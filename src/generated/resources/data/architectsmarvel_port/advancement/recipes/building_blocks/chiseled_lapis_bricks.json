@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_lapis_brick_slab": {
+      "conditions": {
+        "items": [
+          {
+            "items": "architectsmarvel_port:lapis_brick_slab"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "architectsmarvel_port:chiseled_lapis_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_lapis_brick_slab"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "architectsmarvel_port:chiseled_lapis_bricks"
+    ]
+  }
+}

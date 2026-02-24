@@ -1,0 +1,9 @@
+{
+  "parent": "minecraft:block/orientable_with_bottom",
+  "textures": {
+    "bottom": "architectsmarvel_port:block/spotlight_bottom_lit",
+    "front": "architectsmarvel_port:block/spotlight_indicator_3",
+    "side": "architectsmarvel_port:block/spotlight_side_lit",
+    "top": "minecraft:block/furnace_top"
+  }
+}

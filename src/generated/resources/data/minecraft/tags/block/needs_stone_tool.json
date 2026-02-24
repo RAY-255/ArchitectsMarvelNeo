@@ -1,0 +1,25 @@
+{
+  "values": [
+    "architectsmarvel_port:lapis_stairs",
+    "architectsmarvel_port:lapis_slab",
+    "architectsmarvel_port:lapis_bricks",
+    "architectsmarvel_port:lapis_brick_stairs",
+    "architectsmarvel_port:lapis_brick_slab",
+    "architectsmarvel_port:chiseled_lapis_bricks",
+    "architectsmarvel_port:lapis_tiles",
+    "architectsmarvel_port:lapis_tile_stairs",
+    "architectsmarvel_port:lapis_tile_slab",
+    "architectsmarvel_port:lapis_lamp",
+    "architectsmarvel_port:amethyst_bricks",
+    "architectsmarvel_port:chiseled_amethyst_bricks",
+    "architectsmarvel_port:amethyst_mosaic",
+    "architectsmarvel_port:amethyst_lamp",
+    "architectsmarvel_port:calcite_bricks",
+    "architectsmarvel_port:calcite_brick_stairs",
+    "architectsmarvel_port:calcite_brick_slab",
+    "architectsmarvel_port:chiseled_calcite_bricks",
+    "architectsmarvel_port:calcite_tiles",
+    "architectsmarvel_port:stone_pillar",
+    "architectsmarvel_port:spotlight"
+  ]
+}

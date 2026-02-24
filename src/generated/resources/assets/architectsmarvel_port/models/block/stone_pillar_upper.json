@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "architectsmarvel_port:block/stone_column_top",
+    "side": "architectsmarvel_port:block/stone_column_upper"
+  }
+}

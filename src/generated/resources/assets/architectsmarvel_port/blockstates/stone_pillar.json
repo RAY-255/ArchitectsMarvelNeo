@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "down=false,up=false": {
+      "model": "architectsmarvel_port:block/stone_pillar_single"
+    },
+    "down=false,up=true": {
+      "model": "architectsmarvel_port:block/stone_pillar_upper"
+    },
+    "down=true,up=false": {
+      "model": "architectsmarvel_port:block/stone_pillar_lower"
+    },
+    "down=true,up=true": {
+      "model": "architectsmarvel_port:block/stone_pillar_middle"
+    }
+  }
+}
