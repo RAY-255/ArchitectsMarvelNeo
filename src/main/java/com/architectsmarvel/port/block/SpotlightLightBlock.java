@@ -21,7 +21,7 @@ import net.minecraft.world.phys.shapes.VoxelShape;
 
 public class SpotlightLightBlock extends Block {
     public static final BooleanProperty WATERLOGGED = BlockStateProperties.WATERLOGGED;
-    public static final IntegerProperty LEVEL = IntegerProperty.create("level", 0, 12);
+    public static final IntegerProperty LEVEL = IntegerProperty.create("level", 0, 15);
 
     public SpotlightLightBlock(Properties properties) {
         super(properties
@@ -76,6 +76,14 @@ public class SpotlightLightBlock extends Block {
 
     @Override
     public boolean canSurvive(BlockState state, LevelReader level, BlockPos pos) {
-        return level.getBlockState(pos.above()).is(ModBlocks.SPOTLIGHT.get());
+        BlockPos current = pos.above();
+        while (current.getY() < level.getMaxBuildHeight() && level.getBlockState(current).is(ModBlocks.SPOTLIGHT_LIGHT.get())) {
+            current = current.above();
+        }
+        return level.getBlockState(current).is(ModBlocks.SPOTLIGHT.get());
+    }
+
+    public static boolean testSkylight(LevelReader levelReader, BlockState blockState, BlockPos current) {
+        return blockState.propagatesSkylightDown(levelReader, current);
     }
 }

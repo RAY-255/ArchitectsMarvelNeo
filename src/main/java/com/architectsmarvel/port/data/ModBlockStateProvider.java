@@ -8,6 +8,7 @@ import java.util.Map;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.core.Direction;
 import net.minecraft.world.level.block.RotatedPillarBlock;
 import net.minecraft.world.level.block.SlabBlock;
 import net.minecraft.world.level.block.StairBlock;
@@ -84,8 +85,14 @@ public final class ModBlockStateProvider extends BlockStateProvider {
         getVariantBuilder(pillar).forAllStates(state -> {
             boolean up = state.getValue(StonePillarBlock.UP);
             boolean down = state.getValue(StonePillarBlock.DOWN);
+            Direction.Axis axis = state.getValue(StonePillarBlock.AXIS);
+
             ModelFile chosen = !up && !down ? single : (up && down ? middle : (up ? upper : lower));
-            return ConfiguredModel.builder().modelFile(chosen).build();
+
+            int xRot = axis == Direction.Axis.Y ? 0 : 90;
+            int yRot = axis == Direction.Axis.X ? 90 : 0;
+
+            return ConfiguredModel.builder().modelFile(chosen).rotationX(xRot).rotationY(yRot).build();
         });
 
         simpleBlockItem(pillar, middle);
@@ -111,8 +118,8 @@ public final class ModBlockStateProvider extends BlockStateProvider {
                 int lit = state.getValue(SpotlightBlock.LIT) ? 1 : 0;
                 int indicator = state.getValue(SpotlightBlock.INDICATOR);
                 int yRot = switch (state.getValue(SpotlightBlock.FACING)) {
-                    case NORTH -> 180;
-                    case SOUTH -> 0;
+                    case NORTH -> 0;
+                    case SOUTH -> 180;
                     case WEST -> 90;
                     case EAST -> 270;
                     default -> 0;
@@ -129,6 +136,7 @@ public final class ModBlockStateProvider extends BlockStateProvider {
     private ResourceLocation resolveTexture(String blockName) {
         return switch (blockName) {
             case "lapis_stairs", "lapis_slab" -> ResourceLocation.fromNamespaceAndPath("minecraft", "block/lapis_block");
+            case "calcite_stairs", "calcite_slab" -> ResourceLocation.fromNamespaceAndPath("minecraft", "block/calcite");
             default -> ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "block/" + normalizedBaseTexture(blockName));
         };
     }

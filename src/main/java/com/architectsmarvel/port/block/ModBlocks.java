@@ -39,11 +39,15 @@ public final class ModBlocks {
     public static final DeferredBlock<RotatedPillarBlock> AMETHYST_MOSAIC = register("amethyst_mosaic", () -> new RotatedPillarBlock(stoneProps(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<Block> AMETHYST_LAMP = register("amethyst_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_LAMP).lightLevel(s -> 15)));
 
+    public static final DeferredBlock<StairBlock> CALCITE_STAIRS = register("calcite_stairs", () -> new StairBlock(Blocks.CALCITE.defaultBlockState(), stoneProps(Blocks.CALCITE)));
+    public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", () -> new SlabBlock(stoneProps(Blocks.CALCITE)));
     public static final DeferredBlock<Block> CALCITE_BRICKS = register("calcite_bricks", () -> new Block(stoneProps(Blocks.CALCITE)));
     public static final DeferredBlock<StairBlock> CALCITE_BRICK_STAIRS = register("calcite_brick_stairs", () -> new StairBlock(CALCITE_BRICKS.get().defaultBlockState(), stoneProps(Blocks.CALCITE)));
     public static final DeferredBlock<SlabBlock> CALCITE_BRICK_SLAB = register("calcite_brick_slab", () -> new SlabBlock(stoneProps(Blocks.CALCITE)));
     public static final DeferredBlock<Block> CHISELED_CALCITE_BRICKS = register("chiseled_calcite_bricks", () -> new Block(stoneProps(Blocks.CALCITE)));
     public static final DeferredBlock<Block> CALCITE_TILES = register("calcite_tiles", () -> new Block(stoneProps(Blocks.CALCITE)));
+    public static final DeferredBlock<StairBlock> CALCITE_TILE_STAIRS = register("calcite_tile_stairs", () -> new StairBlock(CALCITE_TILES.get().defaultBlockState(), stoneProps(Blocks.CALCITE)));
+    public static final DeferredBlock<SlabBlock> CALCITE_TILE_SLAB = register("calcite_tile_slab", () -> new SlabBlock(stoneProps(Blocks.CALCITE)));
 
     public static final DeferredBlock<StonePillarBlock> STONE_PILLAR = register("stone_pillar", () -> new StonePillarBlock(stoneProps(Blocks.STONE_BRICKS)));
 

@@ -28,7 +28,9 @@ public final class ModRecipeProvider extends RecipeProvider {
     protected void buildRecipes(RecipeOutput out) {
         familyRecipes(out, ModBlocks.LAPIS_BRICKS.get(), ModBlocks.LAPIS_BRICK_STAIRS.get(), ModBlocks.LAPIS_BRICK_SLAB.get());
         familyRecipes(out, ModBlocks.LAPIS_TILES.get(), ModBlocks.LAPIS_TILE_STAIRS.get(), ModBlocks.LAPIS_TILE_SLAB.get());
+        familyRecipes(out, Items.CALCITE, ModBlocks.CALCITE_STAIRS.get(), ModBlocks.CALCITE_SLAB.get());
         familyRecipes(out, ModBlocks.CALCITE_BRICKS.get(), ModBlocks.CALCITE_BRICK_STAIRS.get(), ModBlocks.CALCITE_BRICK_SLAB.get());
+        familyRecipes(out, ModBlocks.CALCITE_TILES.get(), ModBlocks.CALCITE_TILE_STAIRS.get(), ModBlocks.CALCITE_TILE_SLAB.get());
 
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.LAPIS_BRICKS.get(), 4)
             .pattern("##")
@@ -142,11 +144,15 @@ public final class ModRecipeProvider extends RecipeProvider {
             new StonecutTarget(ModBlocks.LAPIS_TILE_SLAB.get(), 2)
         ));
         targets.put(Items.CALCITE, List.of(
+            new StonecutTarget(ModBlocks.CALCITE_STAIRS.get(), 1),
+            new StonecutTarget(ModBlocks.CALCITE_SLAB.get(), 2),
             new StonecutTarget(ModBlocks.CALCITE_BRICKS.get(), 1),
             new StonecutTarget(ModBlocks.CALCITE_BRICK_STAIRS.get(), 1),
             new StonecutTarget(ModBlocks.CALCITE_BRICK_SLAB.get(), 2),
             new StonecutTarget(ModBlocks.CHISELED_CALCITE_BRICKS.get(), 1),
-            new StonecutTarget(ModBlocks.CALCITE_TILES.get(), 1)
+            new StonecutTarget(ModBlocks.CALCITE_TILES.get(), 1),
+            new StonecutTarget(ModBlocks.CALCITE_TILE_STAIRS.get(), 1),
+            new StonecutTarget(ModBlocks.CALCITE_TILE_SLAB.get(), 2)
         ));
         targets.put(Items.AMETHYST_BLOCK, List.of(
             new StonecutTarget(ModBlocks.AMETHYST_BRICKS.get(), 1),

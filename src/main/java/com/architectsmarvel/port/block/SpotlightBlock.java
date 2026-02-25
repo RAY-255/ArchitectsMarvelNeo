@@ -50,8 +50,7 @@ public class SpotlightBlock extends HorizontalDirectionalBlock {
 
     @Override
     public BlockState getStateForPlacement(BlockPlaceContext context) {
-        Direction facing = context.getHorizontalDirection().getOpposite();
-        return this.defaultBlockState().setValue(FACING, facing);
+        return this.defaultBlockState().setValue(FACING, context.getHorizontalDirection().getOpposite());
     }
 
     @Override
@@ -107,7 +106,11 @@ public class SpotlightBlock extends HorizontalDirectionalBlock {
             level.setBlock(pos, newState, 3);
         }
 
-        updateSingleLightBlock(level, pos, powered, lightLevel);
+        if (powered && lightLevel > 0) {
+            fillWithLights(pos, level, lightLevel);
+        } else {
+            removeLights(pos, level);
+        }
     }
 
     private static int getSpecialSideSignal(LevelAccessor level, BlockPos pos, Direction facing) {
@@ -116,45 +119,40 @@ public class SpotlightBlock extends HorizontalDirectionalBlock {
     }
 
     private static int signalToIndicator(int signal) {
-        if (signal <= 0) {
-            return 0;
-        }
-        if (signal <= 5) {
-            return 1;
-        }
-        if (signal <= 10) {
-            return 2;
-        }
+        if (signal <= 0) return 0;
+        if (signal <= 5) return 1;
+        if (signal <= 10) return 2;
         return 3;
     }
 
     private static int signalToLightLevel(int signal) {
-        if (signal <= 0) {
-            return 12;
-        }
-        if (signal <= 5) {
-            return 8;
-        }
-        if (signal <= 10) {
-            return 4;
-        }
+        if (signal <= 0) return 12;
+        if (signal <= 5) return 8;
+        if (signal <= 10) return 4;
         return 0;
     }
 
-    private static void updateSingleLightBlock(LevelAccessor level, BlockPos spotlightPos, boolean powered, int lightLevel) {
-        BlockPos lightPos = spotlightPos.below();
-        BlockState belowState = level.getBlockState(lightPos);
-
-        if (!powered || lightLevel == 0) {
-            if (belowState.is(ModBlocks.SPOTLIGHT_LIGHT.get())) {
-                level.removeBlock(lightPos, false);
+    private static void fillWithLights(BlockPos start, LevelAccessor level, int lightLevel) {
+        BlockPos current = start.below();
+        while (current.getY() > level.getMinBuildHeight() && SpotlightLightBlock.testSkylight(level, level.getBlockState(current), current)) {
+            BlockState state = level.getBlockState(current);
+            if (state.isAir() || state.is(ModBlocks.SPOTLIGHT_LIGHT.get())) {
+                level.setBlock(current, ModBlocks.SPOTLIGHT_LIGHT.get().defaultBlockState().setValue(SpotlightLightBlock.LEVEL, lightLevel), 3);
             }
-            return;
+            current = current.below();
         }
+    }
 
-        if (belowState.isAir() || belowState.is(ModBlocks.SPOTLIGHT_LIGHT.get())) {
-            BlockState lightState = ModBlocks.SPOTLIGHT_LIGHT.get().defaultBlockState().setValue(SpotlightLightBlock.LEVEL, lightLevel);
-            level.setBlock(lightPos, lightState, 3);
+    private static void removeLights(BlockPos start, LevelAccessor level) {
+        BlockPos current = start.below();
+        while (current.getY() > level.getMinBuildHeight()) {
+            BlockState state = level.getBlockState(current);
+            if (state.is(ModBlocks.SPOTLIGHT_LIGHT.get())) {
+                level.removeBlock(current, false);
+            } else if (!state.isAir()) {
+                break;
+            }
+            current = current.below();
         }
     }
 

@@ -1,0 +1,8 @@
+{
+  "replace": false,
+  "values": [
+    "#minecraft:banner_patterns",
+    "minecraft:experience_bottle",
+    "minecraft:ominous_bottle"
+  ]
+}
