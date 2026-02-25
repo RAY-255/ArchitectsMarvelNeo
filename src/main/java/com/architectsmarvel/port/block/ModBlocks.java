@@ -37,7 +37,7 @@ public final class ModBlocks {
     public static final DeferredBlock<AmethystBlock> AMETHYST_BRICKS = register("amethyst_bricks", () -> new AmethystBlock(stoneProps(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<AmethystBlock> CHISELED_AMETHYST_BRICKS = register("chiseled_amethyst_bricks", () -> new AmethystBlock(stoneProps(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<RotatedPillarBlock> AMETHYST_MOSAIC = register("amethyst_mosaic", () -> new RotatedPillarBlock(stoneProps(Blocks.AMETHYST_BLOCK)));
-    public static final DeferredBlock<Block> AMETHYST_LAMP = register("amethyst_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_LAMP).lightLevel(s -> 15)));
+    public static final DeferredBlock<Block> AMETHYST_LAMP = register("amethyst_lamp", () -> new AmethystLampBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_LAMP).lightLevel(s -> 15)));
 
     public static final DeferredBlock<StairBlock> CALCITE_STAIRS = register("calcite_stairs", () -> new StairBlock(Blocks.CALCITE.defaultBlockState(), stoneProps(Blocks.CALCITE)));
     public static final DeferredBlock<SlabBlock> CALCITE_SLAB = register("calcite_slab", () -> new SlabBlock(stoneProps(Blocks.CALCITE)));

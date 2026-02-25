@@ -7,6 +7,8 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.enchantment.Enchantment;
 
 public final class ModEnchantments {
+    public static final int EXCAVATION_MAX_CHARGE_TICKS = 60; // 3 seconds at 20 TPS
+
     public static final ResourceKey<Enchantment> EXCAVATION = ResourceKey.create(
         Registries.ENCHANTMENT,
         ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "excavation")

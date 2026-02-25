@@ -42,8 +42,7 @@ public final class ExcavationHandler {
         long gameTime = player.level().getGameTime();
         MiningStreak streak = updateStreak(player.getUUID(), gameTime, tool, level);
 
-        // Faster ramp-up than before
-        float progress = Math.min(1.0F, streak.holdTicks / 14.0F);
+        float progress = Math.min(1.0F, streak.holdTicks / (float) ModEnchantments.EXCAVATION_MAX_CHARGE_TICKS);
         float maxMultiplier = switch (level) {
             case 1 -> 1.75F;
             case 2 -> 2.35F;
