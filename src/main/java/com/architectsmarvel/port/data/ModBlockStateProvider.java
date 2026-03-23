@@ -61,6 +61,23 @@ public final class ModBlockStateProvider extends BlockStateProvider {
                 continue;
             }
 
+            if (block instanceof RotatedPillarBlock pillar && name.equals("golden_column")) {
+                ResourceLocation side = modLoc("block/golden_column_side");
+                ResourceLocation end = modLoc("block/golden_column_top");
+                axisBlock(pillar, side, end);
+                simpleBlockItem(pillar, models().cubeColumn(name, side, end));
+                continue;
+            }
+
+            if (name.equals("golden_grate")) {
+                ModelFile model = models()
+                    .withExistingParent("golden_grate", mcLoc("block/template_copper_grate"))
+                    .texture("all", modLoc("block/golden_grate"));
+                simpleBlock(block, model);
+                simpleBlockItem(block, model);
+                continue;
+            }
+
             if (block instanceof RotatedPillarBlock pillar && name.equals("amethyst_mosaic")) {
                 ResourceLocation side = ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "block/amethyst_mosaic_side1");
                 ResourceLocation end = ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "block/amethyst_mosaic_top");
@@ -87,7 +104,7 @@ public final class ModBlockStateProvider extends BlockStateProvider {
             boolean down = state.getValue(StonePillarBlock.DOWN);
             Direction.Axis axis = state.getValue(StonePillarBlock.AXIS);
 
-            ModelFile chosen = !up && !down ? single : (up && down ? middle : (up ? upper : lower));
+            ModelFile chosen = !up && !down ? single : (up && down ? middle : (up ? lower : upper));
 
             int xRot = axis == Direction.Axis.Y ? 0 : 90;
             int yRot = axis == Direction.Axis.X ? 90 : 0;
@@ -137,6 +154,7 @@ public final class ModBlockStateProvider extends BlockStateProvider {
         return switch (blockName) {
             case "lapis_stairs", "lapis_slab" -> ResourceLocation.fromNamespaceAndPath("minecraft", "block/lapis_block");
             case "calcite_stairs", "calcite_slab" -> ResourceLocation.fromNamespaceAndPath("minecraft", "block/calcite");
+            case "chiseled_golden_bricks" -> ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "block/chisled_golden_bricks");
             default -> ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "block/" + normalizedBaseTexture(blockName));
         };
     }

@@ -26,6 +26,7 @@ public final class ModRecipeProvider extends RecipeProvider {
 
     @Override
     protected void buildRecipes(RecipeOutput out) {
+        familyRecipes(out, ModBlocks.GOLDEN_BRICKS.get(), ModBlocks.GOLDEN_BRICK_STAIRS.get(), ModBlocks.GOLDEN_BRICK_SLAB.get());
         familyRecipes(out, ModBlocks.LAPIS_BRICKS.get(), ModBlocks.LAPIS_BRICK_STAIRS.get(), ModBlocks.LAPIS_BRICK_SLAB.get());
         familyRecipes(out, ModBlocks.LAPIS_TILES.get(), ModBlocks.LAPIS_TILE_STAIRS.get(), ModBlocks.LAPIS_TILE_SLAB.get());
         familyRecipes(out, Items.CALCITE, ModBlocks.CALCITE_STAIRS.get(), ModBlocks.CALCITE_SLAB.get());
@@ -113,6 +114,34 @@ public final class ModRecipeProvider extends RecipeProvider {
             .unlockedBy("has_amethyst_bricks", has(ModBlocks.AMETHYST_BRICKS.get()))
             .save(out);
 
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLDEN_BRICKS.get(), 4)
+            .pattern("##")
+            .pattern("##")
+            .define('#', Items.GOLD_INGOT)
+            .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+            .save(out, ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "golden_bricks"));
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.CHISELED_GOLDEN_BRICKS.get())
+            .pattern("#")
+            .pattern("#")
+            .define('#', ModBlocks.GOLDEN_BRICK_SLAB.get())
+            .unlockedBy("has_golden_brick_slab", has(ModBlocks.GOLDEN_BRICK_SLAB.get()))
+            .save(out);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLDEN_COLUMN.get(), 2)
+            .pattern("#")
+            .pattern("#")
+            .define('#', ModBlocks.GOLDEN_BRICKS.get())
+            .unlockedBy("has_golden_bricks", has(ModBlocks.GOLDEN_BRICKS.get()))
+            .save(out);
+
+        ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.GOLDEN_GRATE.get(), 4)
+            .pattern("##")
+            .pattern("##")
+            .define('#', Items.GOLD_INGOT)
+            .unlockedBy("has_gold_ingot", has(Items.GOLD_INGOT))
+            .save(out, ResourceLocation.fromNamespaceAndPath(ArchitectsMarvelPort.MOD_ID, "golden_grate"));
+
         ShapedRecipeBuilder.shaped(RecipeCategory.BUILDING_BLOCKS, ModBlocks.STONE_PILLAR.get(), 2)
             .pattern("#")
             .pattern("#")
@@ -158,6 +187,13 @@ public final class ModRecipeProvider extends RecipeProvider {
             new StonecutTarget(ModBlocks.AMETHYST_BRICKS.get(), 1),
             new StonecutTarget(ModBlocks.CHISELED_AMETHYST_BRICKS.get(), 1),
             new StonecutTarget(ModBlocks.AMETHYST_MOSAIC.get(), 1)
+        ));
+        targets.put(Items.GOLD_BLOCK, List.of(
+            new StonecutTarget(ModBlocks.GOLDEN_BRICKS.get(), 1),
+            new StonecutTarget(ModBlocks.GOLDEN_BRICK_STAIRS.get(), 2),
+            new StonecutTarget(ModBlocks.GOLDEN_BRICK_SLAB.get(), 2),
+            new StonecutTarget(ModBlocks.CHISELED_GOLDEN_BRICKS.get(), 1),
+            new StonecutTarget(ModBlocks.GOLDEN_COLUMN.get(), 1)
         ));
         targets.put(Items.STONE_BRICKS, List.of(
             new StonecutTarget(ModBlocks.STONE_PILLAR.get(), 1)
