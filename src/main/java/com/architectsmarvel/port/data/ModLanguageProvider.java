@@ -13,7 +13,6 @@ public final class ModLanguageProvider extends LanguageProvider {
     @Override
     protected void addTranslations() {
         add("itemGroup." + ArchitectsMarvelPort.MOD_ID + ".main", "ArchitectsMarvel Port");
-        add("enchantment." + ArchitectsMarvelPort.MOD_ID + ".excavation", "Excavation");
         ModBlocks.entries().forEach((name, block) -> add(block.get(), humanize(name)));
     }
 

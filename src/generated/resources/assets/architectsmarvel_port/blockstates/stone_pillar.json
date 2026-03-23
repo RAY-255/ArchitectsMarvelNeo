@@ -6,12 +6,12 @@
       "y": 90
     },
     "axis=x,down=false,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_upper",
+      "model": "architectsmarvel_port:block/stone_pillar_lower",
       "x": 90,
       "y": 90
     },
     "axis=x,down=true,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_lower",
+      "model": "architectsmarvel_port:block/stone_pillar_upper",
       "x": 90,
       "y": 90
     },
@@ -24,10 +24,10 @@
       "model": "architectsmarvel_port:block/stone_pillar_single"
     },
     "axis=y,down=false,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_upper"
+      "model": "architectsmarvel_port:block/stone_pillar_lower"
     },
     "axis=y,down=true,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_lower"
+      "model": "architectsmarvel_port:block/stone_pillar_upper"
     },
     "axis=y,down=true,up=true": {
       "model": "architectsmarvel_port:block/stone_pillar_middle"
@@ -37,11 +37,11 @@
       "x": 90
     },
     "axis=z,down=false,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_upper",
+      "model": "architectsmarvel_port:block/stone_pillar_lower",
       "x": 90
     },
     "axis=z,down=true,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_lower",
+      "model": "architectsmarvel_port:block/stone_pillar_upper",
       "x": 90
     },
     "axis=z,down=true,up=true": {

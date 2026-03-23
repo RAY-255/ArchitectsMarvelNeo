@@ -1,4 +1,4 @@
-package com.architectsmarvel.port.enchant;
+package com.architectsmarvel.port.wip.excavation;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -14,11 +14,11 @@ import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.enchantment.Enchantment;
 import net.minecraft.world.item.enchantment.EnchantmentHelper;
 import net.neoforged.bus.api.SubscribeEvent;
-import net.neoforged.fml.common.EventBusSubscriber;
+// @EventBusSubscriber(modid = com.architectsmarvel.port.ArchitectsMarvelPort.MOD_ID) // WIP — disabled
 import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import org.joml.Vector3f;
 
-@EventBusSubscriber(modid = com.architectsmarvel.port.ArchitectsMarvelPort.MOD_ID)
+// WIP: Excavation enchantment handler — disabled, moved out of active package
 public final class ExcavationHandler {
     private static final Map<UUID, MiningStreak> STREAKS = new HashMap<>();
 

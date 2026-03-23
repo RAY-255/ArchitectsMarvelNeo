@@ -23,16 +23,16 @@ public final class ModBlocks {
 
     private static final Map<String, DeferredBlock<? extends Block>> ENTRIES = new LinkedHashMap<>();
 
-    public static final DeferredBlock<StairBlock> LAPIS_STAIRS = register("lapis_stairs", () -> new LapisEnchantingStairBlock(Blocks.LAPIS_BLOCK.defaultBlockState(), stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<SlabBlock> LAPIS_SLAB = register("lapis_slab", () -> new LapisEnchantingSlabBlock(stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<Block> LAPIS_BRICKS = register("lapis_bricks", () -> new LapisEnchantingBlock(stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<StairBlock> LAPIS_BRICK_STAIRS = register("lapis_brick_stairs", () -> new LapisEnchantingStairBlock(LAPIS_BRICKS.get().defaultBlockState(), stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<SlabBlock> LAPIS_BRICK_SLAB = register("lapis_brick_slab", () -> new LapisEnchantingSlabBlock(stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<Block> CHISELED_LAPIS_BRICKS = register("chiseled_lapis_bricks", () -> new LapisEnchantingBlock(stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<Block> LAPIS_TILES = register("lapis_tiles", () -> new LapisEnchantingBlock(stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<StairBlock> LAPIS_TILE_STAIRS = register("lapis_tile_stairs", () -> new LapisEnchantingStairBlock(LAPIS_TILES.get().defaultBlockState(), stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<SlabBlock> LAPIS_TILE_SLAB = register("lapis_tile_slab", () -> new LapisEnchantingSlabBlock(stoneProps(Blocks.LAPIS_BLOCK)));
-    public static final DeferredBlock<Block> LAPIS_LAMP = register("lapis_lamp", () -> new LapisEnchantingBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_LAMP).lightLevel(s -> 15)));
+    public static final DeferredBlock<StairBlock> LAPIS_STAIRS = register("lapis_stairs", () -> new StairBlock(Blocks.LAPIS_BLOCK.defaultBlockState(), stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<SlabBlock> LAPIS_SLAB = register("lapis_slab", () -> new SlabBlock(stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<Block> LAPIS_BRICKS = register("lapis_bricks", () -> new Block(stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<StairBlock> LAPIS_BRICK_STAIRS = register("lapis_brick_stairs", () -> new StairBlock(LAPIS_BRICKS.get().defaultBlockState(), stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<SlabBlock> LAPIS_BRICK_SLAB = register("lapis_brick_slab", () -> new SlabBlock(stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<Block> CHISELED_LAPIS_BRICKS = register("chiseled_lapis_bricks", () -> new Block(stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<Block> LAPIS_TILES = register("lapis_tiles", () -> new Block(stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<StairBlock> LAPIS_TILE_STAIRS = register("lapis_tile_stairs", () -> new StairBlock(LAPIS_TILES.get().defaultBlockState(), stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<SlabBlock> LAPIS_TILE_SLAB = register("lapis_tile_slab", () -> new SlabBlock(stoneProps(Blocks.LAPIS_BLOCK)));
+    public static final DeferredBlock<Block> LAPIS_LAMP = register("lapis_lamp", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.REDSTONE_LAMP).lightLevel(s -> 15)));
 
     public static final DeferredBlock<AmethystBlock> AMETHYST_BRICKS = register("amethyst_bricks", () -> new AmethystBlock(stoneProps(Blocks.AMETHYST_BLOCK)));
     public static final DeferredBlock<AmethystBlock> CHISELED_AMETHYST_BRICKS = register("chiseled_amethyst_bricks", () -> new AmethystBlock(stoneProps(Blocks.AMETHYST_BLOCK)));
@@ -53,6 +53,13 @@ public final class ModBlocks {
 
     public static final DeferredBlock<SpotlightBlock> SPOTLIGHT = register("spotlight", SpotlightBlock::new);
     public static final DeferredBlock<SpotlightLightBlock> SPOTLIGHT_LIGHT = registerNoItem("spotlight_light", () -> new SpotlightLightBlock(BlockBehaviour.Properties.of()));
+
+    public static final DeferredBlock<Block> GOLDEN_BRICKS = register("golden_bricks", () -> new Block(stoneProps(Blocks.GOLD_BLOCK)));
+    public static final DeferredBlock<StairBlock> GOLDEN_BRICK_STAIRS = register("golden_brick_stairs", () -> new StairBlock(GOLDEN_BRICKS.get().defaultBlockState(), stoneProps(Blocks.GOLD_BLOCK)));
+    public static final DeferredBlock<SlabBlock> GOLDEN_BRICK_SLAB = register("golden_brick_slab", () -> new SlabBlock(stoneProps(Blocks.GOLD_BLOCK)));
+    public static final DeferredBlock<Block> CHISELED_GOLDEN_BRICKS = register("chiseled_golden_bricks", () -> new Block(stoneProps(Blocks.GOLD_BLOCK)));
+    public static final DeferredBlock<RotatedPillarBlock> GOLDEN_COLUMN = register("golden_column", () -> new RotatedPillarBlock(stoneProps(Blocks.GOLD_BLOCK)));
+    public static final DeferredBlock<Block> GOLDEN_GRATE = register("golden_grate", () -> new Block(BlockBehaviour.Properties.ofFullCopy(Blocks.COPPER_GRATE)));
 
     private ModBlocks() {}
 
