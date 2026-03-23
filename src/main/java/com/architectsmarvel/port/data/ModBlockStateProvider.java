@@ -99,14 +99,22 @@ public final class ModBlockStateProvider extends BlockStateProvider {
         ModelFile middle = models().cubeColumn("stone_pillar_middle", modLoc("block/stone_column_middle"), modLoc("block/stone_column_top"));
         ModelFile upper = models().cubeColumn("stone_pillar_upper", modLoc("block/stone_column_upper"), modLoc("block/stone_column_top"));
 
+        ModelFile singleH = models().cubeColumnHorizontal("stone_pillar_single_horizontal", modLoc("block/stone_column_side"), modLoc("block/stone_column_top"));
+        ModelFile lowerH = models().cubeColumnHorizontal("stone_pillar_lower_horizontal", modLoc("block/stone_column_lower"), modLoc("block/stone_column_top"));
+        ModelFile middleH = models().cubeColumnHorizontal("stone_pillar_middle_horizontal", modLoc("block/stone_column_middle"), modLoc("block/stone_column_top"));
+        ModelFile upperH = models().cubeColumnHorizontal("stone_pillar_upper_horizontal", modLoc("block/stone_column_upper"), modLoc("block/stone_column_top"));
+
         getVariantBuilder(pillar).forAllStates(state -> {
             boolean up = state.getValue(StonePillarBlock.UP);
             boolean down = state.getValue(StonePillarBlock.DOWN);
             Direction.Axis axis = state.getValue(StonePillarBlock.AXIS);
 
-            ModelFile chosen = !up && !down ? single : (up && down ? middle : (up ? lower : upper));
+            boolean isHorizontal = axis != Direction.Axis.Y;
+            ModelFile chosenV = !up && !down ? single : (up && down ? middle : (up ? lower : upper));
+            ModelFile chosenH = !up && !down ? singleH : (up && down ? middleH : (up ? lowerH : upperH));
+            ModelFile chosen = isHorizontal ? chosenH : chosenV;
 
-            int xRot = axis == Direction.Axis.Y ? 0 : 90;
+            int xRot = isHorizontal ? 90 : 0;
             int yRot = axis == Direction.Axis.X ? 90 : 0;
 
             return ConfiguredModel.builder().modelFile(chosen).rotationX(xRot).rotationY(yRot).build();

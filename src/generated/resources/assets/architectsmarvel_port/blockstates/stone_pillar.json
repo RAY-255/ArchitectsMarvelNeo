@@ -1,22 +1,22 @@
 {
   "variants": {
     "axis=x,down=false,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_single",
+      "model": "architectsmarvel_port:block/stone_pillar_single_horizontal",
       "x": 90,
       "y": 90
     },
     "axis=x,down=false,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_lower",
+      "model": "architectsmarvel_port:block/stone_pillar_lower_horizontal",
       "x": 90,
       "y": 90
     },
     "axis=x,down=true,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_upper",
+      "model": "architectsmarvel_port:block/stone_pillar_upper_horizontal",
       "x": 90,
       "y": 90
     },
     "axis=x,down=true,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_middle",
+      "model": "architectsmarvel_port:block/stone_pillar_middle_horizontal",
       "x": 90,
       "y": 90
     },
@@ -33,19 +33,19 @@
       "model": "architectsmarvel_port:block/stone_pillar_middle"
     },
     "axis=z,down=false,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_single",
+      "model": "architectsmarvel_port:block/stone_pillar_single_horizontal",
       "x": 90
     },
     "axis=z,down=false,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_lower",
+      "model": "architectsmarvel_port:block/stone_pillar_lower_horizontal",
       "x": 90
     },
     "axis=z,down=true,up=false": {
-      "model": "architectsmarvel_port:block/stone_pillar_upper",
+      "model": "architectsmarvel_port:block/stone_pillar_upper_horizontal",
       "x": 90
     },
     "axis=z,down=true,up=true": {
-      "model": "architectsmarvel_port:block/stone_pillar_middle",
+      "model": "architectsmarvel_port:block/stone_pillar_middle_horizontal",
       "x": 90
     }
   }
